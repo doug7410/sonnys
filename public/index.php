@@ -12,7 +12,7 @@ $app->post('/login', function (\Illuminate\Http\Request $request){
     $username = $request->input('username');
     $password = $request->input('password');
 
-    if ($username == 'u' && $password == 'p') {
+    if (strtolower($username) == 'u' && strtolower($password) == 'p') {
          return JsonResponse::create([
              'success' =>
                  ['message' => 'successful login']
